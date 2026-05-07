@@ -41,7 +41,7 @@ console.log("A variável é", typeOfZ);
 */
 
 // Operadores relacionais
-console.log('5' != 5); // Diferença
+console.log("5" != 5); // Diferença
 console.log("5" == 5); // Compara tipo OU valor
 console.log("5" === 5); // Compara tipo E valor
 
@@ -49,3 +49,133 @@ console.log("5" === 5); // Compara tipo E valor
 console.log(x++); // Incremento após o retorno do valor
 console.log(x);
 console.log(++x); // Incremento antes o retorno do valor
+
+// Aula 07/05/2026
+
+// x++;
+// ++x;
+// x += 1;
+// x = x + 1;
+
+// Operadores lógicos - && (AND), || (OR), ! (NOT)
+let isExpression = (true && 5 + 2 * 3 < 10) || false; // 1º operadores aritmétricos, 2º operadores relacionais, 3º operadores lógicos
+console.log(isExpression);
+
+// IF ELSE
+/*
+if (condition) {
+    condition === true
+
+} else {
+    condition === false
+
+}
+*/
+
+// Template Strings
+let text = `React é "tudo de bom"!\\
+Programar é minha vida!/
+Eu amo o IFRN! '❤'\\`;
+console.log(text);
+
+// Estruturas de repetição (for)
+/* for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    
+}
+*/
+
+// Arrays
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+console.log(fruits.length); // Tamanho
+
+console.log(fruits[0]); // Buscar o índice
+
+fruits.push("Kiwi"); // Insere o elemento no final da lista
+console.log(fruits);
+
+console.log(fruits.pop()); // Retorna e remove o último elemento
+console.log(fruits);
+
+console.log(fruits.shift()); // Retorna e remove o primeiro elemento
+console.log(fruits);
+
+fruits.unshift("Lemon"); // Insere o elemento no início da lista
+console.log(fruits);
+
+// Argumento 1 - posição
+// Argumento 2 - quantos elementos serão removidos
+// Argumento 3 - lista de elementos que serão inseridos
+fruits.splice(2, 0, "Kiwi", "Blueberry"); // Insere dois elementos após o 2º elemento
+console.log(fruits);
+
+fruits.splice(2, 1); // Remove o 3º elemento
+console.log(fruits);
+
+// Desafio - substituir 'Apple' por 'Kiwi'
+fruits.splice(3, 1, "Kiwi");
+console.log(fruits);
+
+// Busca índice do elemento 'Kiwi'
+let index = fruits.indexOf("Kiwi");
+console.log(index);
+
+fruits.splice(index, 1, "Apple");
+console.log(fruits);
+
+console.log("Ordenação");
+
+let sortedFruits = fruits.toSorted(); // Não altera o array
+console.log(sortedFruits);
+
+let reversedFruits = fruits.toReversed(); // Não altera o array
+console.log(reversedFruits);
+
+// Ordernar em ordem crescente
+fruits.sort(); // Altera o array
+console.log(fruits);
+
+// Ordernar em ordem decrescente
+fruits.reverse(); // Altera o array
+console.log(fruits);
+
+const numbers = [45, 4, 9, 16, 25];
+console.log(numbers);
+
+// Desafio - criar um array chamado 'numbers2' que duplique os valores de 'numbers'
+// Output: [90, 8, 18, 32, 50]
+
+let numbers2 = [];
+
+for (let i = 0; i < numbers.length; i++) {
+  let element = numbers[i] * 2;
+  numbers2.push(element);
+}
+
+console.log(numbers2);
+
+// function
+function myFunction(value, index, array) {
+  return value * 2;
+}
+
+const numbersMap = numbers.map(myFunction);
+console.log(numbersMap);
+
+// Arrow function
+console.log(numbers.map((number) => number * 2));
+
+// Ordenar em ordem crescente com números
+console.log(numbers.toSorted((a, b) => a - b));
+
+// Ordenar em ordem descrescente com números
+console.log(numbers.toSorted((a, b) => b - a));
+
+// Pegar maior valor
+numbers.sort((a, b) => a - b);
+console.log('Maior =', numbers[numbers.length-1]);
+
+// Pegar menor valor
+console.log('Menor =', numbers[0]);
+
