@@ -38,12 +38,30 @@ const filmes = [
   { titulo: "Divertida Mente", ano: 2015, genero: "animação" },
 ];
 
-const filmesFilter = filmes
-  .map((filmes) => ({
-    Título: filmes.titulo,
-    Ano: filmes.ano,
-    Gênero: filmes.genero,
-  }))
-  .filter((filmesFilter) => filmesFilter.Gênero === "ficção")
-  .sort((a, b) => b.Ano - a.Ano);
-console.log(filmesFilter);
+function buscarFilmes(genero,criterio) {
+  const filtro = filmes.filter((filme) => filme.genero === genero);
+
+  if (criterio === 'titulo') {
+    filtro.sort((a,b) => a.titulo.localeCompare(b.titulo));
+  } else if(criterio === 'ano'){
+    filtro.sort((a,b) => (b.ano - a.ano));
+  } else {
+    console.log('Critério inválido!');
+    filtro.length = 0;
+  }
+
+  console.log(filtro.map((filme) => `${filme.titulo} (${filme.ano}) - ${filme.genero}`))
+}
+
+buscarFilmes('ficção', 'ano');
+
+// Vou buscar manter essa resposta
+// const filmesFilter = filmes
+//   .map((filmes) => ({
+//     Título: filmes.titulo,
+//     Ano: filmes.ano,
+//     Gênero: filmes.genero,
+//   }))
+//   .filter((filmesFilter) => filmesFilter.Gênero === "ficção")
+//   .sort((a, b) => b.Ano - a.Ano);
+// console.log(filmesFilter);
