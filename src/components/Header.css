@@ -1,0 +1,12 @@
+header {
+  background-color: rgba(236, 241, 241, 0.842);
+  color: black;
+  height: 12rem;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+header h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 5rem;
+}
