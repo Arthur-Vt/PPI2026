@@ -1,5 +1,7 @@
 import "./App.css";
 import Header from "./components/Header.jsx";
+import NoticeList from './components/NoticeList.jsx'
+import NoticeCard from './components/NoticeCard.jsx'
 
 function App() {
   const notices = [
@@ -29,22 +31,7 @@ function App() {
         title={"Programação para Internet"}
         subtitle={"IFRN - Campus Macau"}
       />
-      <main className="main">
-        <h1>Manual Digital do IFRN - Campus Macau</h1>
-
-        {notices.map((notice) => (
-          <article>
-            <p>{notice.category}</p>
-            <h3>{notice.title}</h3>
-            <p>{notice.description}</p>
-
-            <div>
-              <span>{notice.author}</span>
-              <span>{notice.date}</span>
-            </div>
-          </article>
-        ))}
-      </main>
+      <NoticeList notices={notices} />
     </>
   );
 }
