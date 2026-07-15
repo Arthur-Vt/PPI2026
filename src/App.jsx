@@ -1,10 +1,10 @@
+import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header.jsx";
 import NoticeList from "./components/NoticeList.jsx";
-import NoticeCard from "./components/NoticeCard.jsx";
 
 function App() {
-  const notices = [
+  const [notices, setNotices] = useState([
     {
       id: 1,
       title: "Secitex Macau 2026",
@@ -23,11 +23,14 @@ function App() {
       date: "01/07/2026",
       featured: false,
     },
-  ];
+  ]);
 
   function handleToggleFeatured(id) {
-    notices.map(
-      (notice) => notice.id === id && { ...notice, featured: !notice.featured },
+    setNotices((notices) =>
+      notices.map(
+        (notice) =>
+          notice.id === id ? { ...notice, featured: !notice.featured } : notice,
+      ),
     );
   }
 
