@@ -27,20 +27,24 @@ function App() {
 
   function handleToggleFeatured(id) {
     setNotices((notices) =>
-      notices.map(
-        (notice) =>
-          notice.id === id ? { ...notice, featured: !notice.featured } : notice,
+      notices.map((notice) =>
+        notice.id === id ? { ...notice, featured: !notice.featured } : notice,
       ),
     );
   }
 
+  function handleDeleteNotice(id) {
+    setNotices(()=> notices.filter(id));
+  }
+
+// Se notice.id for diferente 
   return (
     <>
       <Header
         title={"Programação para Internet"}
         subtitle={"IFRN - Campus Macau"}
       />
-      <NoticeList notices={notices} onToggleFeatured={handleToggleFeatured} />
+      <NoticeList notices={notices} onToggleFeatured={handleToggleFeatured} onDeleteNotice={handleDeleteNotice}/>
     </>
   );
 }

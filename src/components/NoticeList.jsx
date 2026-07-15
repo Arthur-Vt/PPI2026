@@ -7,7 +7,7 @@ function NoticeList({ notices, onToggleFeatured }) {
       <h2>Manual Digital do IFRN - Campus Macau</h2>
 
       {notices.map((notice) => (
-        <NoticeCard key={notice.id} notice={notice} onToggleFeatured={onToggleFeatured} />
+        <NoticeCard key={notice.id} notice={notice} onToggleFeatured={onToggleFeatured} onDeleteNotice={onDeleteNotice} />
       ))}
     </main>
   );
