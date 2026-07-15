@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/Header.jsx";
-import NoticeList from './components/NoticeList.jsx'
-import NoticeCard from './components/NoticeCard.jsx'
+import NoticeList from "./components/NoticeList.jsx";
+import NoticeCard from "./components/NoticeCard.jsx";
 
 function App() {
   const notices = [
@@ -25,13 +25,19 @@ function App() {
     },
   ];
 
+  function handleToggleFeatured(id) {
+    notices.map(
+      (notice) => notice.id === id && { ...notice, featured: !notice.featured },
+    );
+  }
+
   return (
     <>
       <Header
         title={"Programação para Internet"}
         subtitle={"IFRN - Campus Macau"}
       />
-      <NoticeList notices={notices} />
+      <NoticeList notices={notices} onToggleFeatured={handleToggleFeatured} />
     </>
   );
 }

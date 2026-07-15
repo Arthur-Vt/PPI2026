@@ -12,6 +12,23 @@
 }
 
 .notice-card:hover {
-    box-shadow: 0 0 3rem 1rem #ddd;
+    box-shadow: 0 0 3rem 1rem #630404;
     transform: translateY(-0.2rem);
+}
+
+.featured {
+    border: 0.3rem solid var(--primary);
+}
+
+.notice-meta {
+    display: flex;
+    gap: 0.3rem;
+    font-style: italic;
+}
+
+.notice-actions button {
+    background-color: var(--primary);
+    color: #ccc;
+    padding: 0.25rem 2rem;
+    border-radius: 0.5rem;
 }
